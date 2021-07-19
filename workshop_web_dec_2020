@@ -1,0 +1,115 @@
+<section class="banner">
+  <div class="banner-section">
+    <h2>My favorite games</h2>
+    <button id="">Know More</button>
+  <div>
+</section>
+
+<section class="article-section">
+  <article>
+    <divclass class="img-box">
+      <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1608613468730&di=0cfe87eee35d7a30ad68695d5f6b5ea9&imgtype=0&src=http%3A%2F%2Fe.hiphotos.baidu.com%2Fbaike%2Fpic%2Fitem%2F58ee3d6d55fbb2fb97293826424a20a44623dc80.jpg">
+    </div>
+    <h4>Minecraft</h4>
+    <p>Minecraft is a sandbox video game developed by Mojang. The game was created by Markus "Notch" Persson in the Java programming language. Following several early test versions, it was released as a paid public alpha for personal computers in 2009 before releasing in November 2011, with Jens Bergensten taking over development. Minecraft has since been ported to several other platforms and is the best-selling video game of all time, with 200 million copies sold and 126 million monthly active users as of 2020.</p>
+   </article>
+  <article>
+    <div class="img-box">
+      <img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3331503621,1790596428&fm=26&gp=0.jpg">
+    </div>
+    <h4>Mario Kart 8</h4>
+    <p>Mario Kart 8 is a 2014 kart racing game developed and published by Nintendo for its Wii U home video game console in May 2014. It retains Mario Kart series game mechanics, where players control Mario franchise characters in kart racing, collecting a variety of items to hinder opponents or gain advantages in the race. Mario Kart 8 introduces anti-gravity driving on walls or ceilings, and allows players to bump each another for a short boost. It has single-player and multiplayer modes, including online via the Nintendo Network.</p>
+   </article>
+  <article>
+    <div class="img-box">
+      <img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fwww.ineng.org%2Fuploadfile%2F2020%2F0423%2F20200423094043827.jpg&refer=http%3A%2F%2Fwww.ineng.org&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1611614629&t=9ac857cd2287e94b627e57c35732787a">
+    </div>
+    <h4>Fortnite</h4>
+    <p>Fortnite is an online video game developed by Epic Games and released in 2017. It is available in three distinct game mode versions that otherwise share the same general gameplay and game engine: Fortnite: Save the World, a cooperative hybrid-tower defense-shooter-survival game for up to four players to fight off zombie-like creatures and defend objects with traps and fortifications they can build; Fortnite Battle Royale, a free-to-play battle royale game in which up to 100 players fight to be the last person standing; and Fortnite Creative, in which players are given complete freedom to create worlds and battle arenas.</p>
+   </article>
+</section>
+<footer>
+  I love video games!
+</footer>
+
+
+
+# css
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.banner {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: red;
+  background-image: url("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1608605440211&di=0341321563911fc19242ff6f77d0b7ec&imgtype=0&src=http%3A%2F%2Fi2.hdslb.com%2Fbfs%2Farchive%2Fee0d62afc8d7ec8ac1324ca90e347b07cd5ab5f6.png");
+  background-size: cover;
+  background-position: center;
+}
+.banner .banner-section {
+  margin: 0 auto;
+  width: 300px;
+  text-align: center;
+  margin-top: 100px
+}
+.banner .banner-section h2 {
+  font-size: 50px;
+  line-height: 50px;
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 0 0 5px grey;
+}
+.banner .banner-section button {
+  border: none;
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  transition: 0.3s;
+}
+.banner .banner-section button: hover {
+  background: rgb(255, 91, 91)
+}
+.banner .banner-section button: active {
+  background: pink;
+}
+
+.article-section {
+  width: 1000px;
+  margin: 0px;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+  font-size: 16px;
+}
+.article-section article {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+.article-section article .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-section article {
+  width: 30%;
+  background: rgb(255, 248, 238);
+  padding: 20px;
+  box-sizing: border-box;
+}
+.article-section article h4 {
+  font-size: 20px;
+}
+.footer {
+  background: rgb(58, 58, 58);
+  color: white;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 50px;
+}

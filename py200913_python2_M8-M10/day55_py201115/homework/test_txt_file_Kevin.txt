@@ -1,0 +1,10 @@
+This is test_txt_file_Kevin
+This is the second line of this file
+Pandas are really cute
+I have no idea what to write so here are some interesting facts:
+The scientific term for brain freeze is “sphenopalatine ganglioneuralgia”.
+The only letter that doesn’t appear on the periodic table is J.
+A single strand of Spaghetti is called a “Spaghetto”.
+If you cut down a cactus in Arizona, you’ll be penalized up to 25 years in jail. It is similar to cutting down a protected tree species.
+At birth, a baby panda is smaller than a mouse.
+The tongue is the only muscle in one’s body that is attached from one end.
