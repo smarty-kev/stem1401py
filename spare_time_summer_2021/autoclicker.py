@@ -5,8 +5,10 @@ a = pynput.mouse.Controller()
 
 time.sleep(5)
 
+
 def spam_left():
     pass
+
 
 for i in range(500):
     a.press(pynput.mouse.Button.left)
