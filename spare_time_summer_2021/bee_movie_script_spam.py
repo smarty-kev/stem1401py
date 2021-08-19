@@ -7,5 +7,4 @@ content = file.read()
 
 time.sleep(3)
 
-keyboard.write(content, 0.001); """
-"""
+keyboard.write(content, 0.001)
