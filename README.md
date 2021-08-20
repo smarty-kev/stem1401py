@@ -1,3 +1,3 @@
 My python journey
 
-By Kevin 🤓
+By Kevin (Ｔ▽Ｔ)
