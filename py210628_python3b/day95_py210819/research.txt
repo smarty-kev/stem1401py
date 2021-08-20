@@ -1,0 +1,88 @@
+[Homework]
+Date: 2021-08-19
+Search and try out keyboard events
+Hints:
+Search on Internet and write down the key list
+Divide them into group
+Write codes and test if they work properly
+Due date: 2021-08-22
+
+
+<Button> − Use the Button event in a handler for binding the Mouse wheels and Buttons.
+<ButtonRelease> − Instead of clicking a Button, you can also trigger an event by releasing the mouse buttons.
+<Configure> − Use this event to change the widgets properties.
+Destroy − Use this event to kill or terminate a particular widget.
+<Enter> − It actually works like <return> event that can be used to get the focus on a widget with mouse Pointer
+<Expose> − The event occurs whenever a widget or some part of the application becomes visible that covered by another window in the application.
+<Focus In> − This event is generally used to get the focus on a particular widget.
+<Focus Out> − To move the focus from the current widget.
+<Key Press> − Start the process or call the handler by pressing the key.
+<KeyRelease> − Start the process or call an event by releasing a key.
+<Leave> − Use this event to track the mouse pointer when user switches from one widget to another widget.
+<Map> − Use Map event to show or display any widget in the application.
+<Motion> − Track the event whenever the mouse pointer moves entirely within the application.
+<Unmap> − A widget can be unmapped from the application. It is similar to hiding the widget using grid_remove().
+<Visibility> − An event can happen if some part of the application gets visible in the screen.
+
+
+
+.keysym	.keycode	.keysym_num	Key
+Alt_L	64	65513	The left-hand alt key
+Alt_R	113	65514	The right-hand alt key
+BackSpace	22	65288	backspace
+Cancel	110	65387	break
+Caps_Lock	66	65549	CapsLock
+Control_L	37	65507	The left-hand control key
+Control_R	109	65508	The right-hand control key
+Delete	107	65535	Delete
+Down	104	65364	↓
+End	103	65367	end
+Escape	9	65307	esc
+Execute	111	65378	SysReq
+F1	67	65470	Function key F1
+F2	68	65471	Function key F2
+Fi	66+i	65469+i	Function key Fi
+F12	96	65481	Function key F12
+Home	97	65360	home
+Insert	106	65379	insert
+Left	100	65361	←
+Linefeed	54	106	Linefeed (control-J)
+KP_0	90	65438	0 on the keypad
+KP_1	87	65436	1 on the keypad
+KP_2	88	65433	2 on the keypad
+KP_3	89	65435	3 on the keypad
+KP_4	83	65430	4 on the keypad
+KP_5	84	65437	5 on the keypad
+KP_6	85	65432	6 on the keypad
+KP_7	79	65429	7 on the keypad
+KP_8	80	65431	8 on the keypad
+KP_9	81	65434	9 on the keypad
+KP_Add	86	65451	+ on the keypad
+KP_Begin	84	65437	The center key (same key as 5) on the keypad
+KP_Decimal	91	65439	Decimal (.) on the keypad
+KP_Delete	91	65439	delete on the keypad
+KP_Divide	112	65455	/ on the keypad
+KP_Down	88	65433	↓ on the keypad
+KP_End	87	65436	end on the keypad
+KP_Enter	108	65421	enter on the keypad
+KP_Home	79	65429	home on the keypad
+KP_Insert	90	65438	insert on the keypad
+KP_Left	83	65430	← on the keypad
+KP_Multiply	63	65450	× on the keypad
+KP_Next	89	65435	PageDown on the keypad
+KP_Prior	81	65434	PageUp on the keypad
+KP_Right	85	65432	→ on the keypad
+KP_Subtract	82	65453	- on the keypad
+KP_Up	80	65431	↑ on the keypad
+Next	105	65366	PageDown
+Num_Lock	77	65407	NumLock
+Pause	110	65299	pause
+Print	111	65377	PrintScrn
+Prior	99	65365	PageUp
+Return	36	65293	The enter key (control-M). The name Enter refers to a mouse-related event, not a keypress; see Section 54, “Events”
+Right	102	65363	→
+Scroll_Lock	78	65300	ScrollLock
+Shift_L	50	65505	The left-hand shift key
+Shift_R	62	65506	The right-hand shift key
+Tab	23	65289	The tab key
+Up	98	65362	↑
