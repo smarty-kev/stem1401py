@@ -19,8 +19,8 @@ root.config()
 score = 0
 var = StringVar()
 var.set(score)
-emoji = Label(textvariable=var, font=(None, 150))
-emoji.pack()
+label1 = Label(textvariable=var, font=(None, 150))
+label1.pack()
 
 # root
 root.bind("<MouseWheel>", handler)

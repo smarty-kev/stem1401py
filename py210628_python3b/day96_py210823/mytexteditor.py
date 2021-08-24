@@ -1,5 +1,5 @@
 """
-text
+text editor
 """
 
 from tkinter import *
