@@ -7,6 +7,7 @@ Last Modified : 23 August 2021
 
 from tkinter import *
 from tkinter.ttk import Separator
+from tkinter import font
 
 
 def pinpoint_position(event):
@@ -36,6 +37,8 @@ def dark_mode():
     text_frame.config(bg=color)
     text_box.config(bg=color)
     frame_toolbar.config(bg=color)
+    font_label.config(bg=color)
+    size_label.config(bg=color)
     status_bar.config(bg=color)
     frame_status.config(bg=color)
     theme_btn.config(text="Light Mode", command=light_mode)
@@ -48,6 +51,8 @@ def light_mode():
     text_frame.config(bg=color)
     text_box.config(bg=color)
     frame_toolbar.config(bg=color)
+    font_label.config(bg=color)
+    size_label.config(bg=color)
     status_bar.config(bg=color)
     frame_status.config(bg=color)
     theme_btn.config(text="Dark Mode", command=dark_mode)
@@ -71,21 +76,36 @@ def save_as():
 
 
 def change_font():
-    global font
-    if fonts.index(font) == len(fonts) - 1:
-        font = fonts[0]
+    global font_family
+    if font_families.index(font_family) == len(font_families) - 1:
+        font_family = font_families[0]
     else:
-        font = fonts[fonts.index(font) + 1]
-    font_var.set(font)
-    entire_txt = text_box.get("1.0", "end-1c")
-    # print(font)
+        font_family = font_families[font_families.index(font_family) + 1]
+    font_family_var.set(font_family)
+    font_settings.config(family=font_family)
+    text_box.config(font=font_settings)
+
+
+def add_size():
+    global size
+    size += 1
+    size_var.set(size)
+    font_settings.config(size=size)
+
+
+def sub_size():
+    global size
+    if size != 1:  # to not make text smaller than size 1
+        size -= 1
+    size_var.set(size)
+    font_settings.config(size=size)
 
 
 # window specifications
 root = Tk()
-root.title("My Text Editor")
+root.title("My Text Editor | Kevin Liu")
 root.geometry("640x480+200+200")
-root.config()
+root.config(bg="linen")
 
 
 # toolbar
@@ -102,17 +122,31 @@ paste_btn.pack(side=LEFT, padx=5)
 frame_toolbar.bind_class("<<Paste>>", paste)
 theme_btn = Button(frame_toolbar, text='Dark mode', command=dark_mode)  # dark mode
 theme_btn.pack(side=LEFT, padx=(0, 5))
-font_label = Label(frame_toolbar, text="Font")  # font label
+font_label = Label(frame_toolbar, text="Font", bg="linen")  # font label
 font_label.pack(side=LEFT, padx=(10, 0))
-fonts = ("Helvetica", "Calibri", "Arial")  # families
-font = fonts[0]; font_var = StringVar(); font_var.set(font)
-family_btn = Button(frame_toolbar, textvariable=font_var, width=7, command=change_font)  # button to change font
+font_families = ("Calibri", "Helvetica", "Damascus", "Athelas")  # families, you add as many as you want
+font_family = font_families[0]  # default family
+font_family_var = StringVar(); font_family_var.set(font_family)
+family_btn = Button(frame_toolbar, textvariable=font_family_var, width=7, command=change_font)  # button to change font
 family_btn.pack(side=LEFT, padx=5)
+size = 12  # default size
+size_var = IntVar(); size_var.set(size)
+size_label = Label(frame_toolbar, textvariable=size_var, bg="linen")  # font size label
+font_add_size = Button(frame_toolbar, text="+", font=(None, 14), command=add_size)  # add size button
+font_sub_size = Button(frame_toolbar, text="-", font=(None, 14), command=sub_size)  # subtract size button
+font_add_size.pack(side=LEFT, padx=5)  # first pack + button
+size_label.pack(side=LEFT, padx=5)  # second pack label showing current size
+font_sub_size.pack(side=LEFT, padx=5)  # finally pack - button
+
+
+font_settings = font.Font(family=font_family, size=size)  # default font settings
+
 
 # text area
 text_frame = Frame(root, height=30)  # frame
 text_frame.pack(anchor=CENTER, fill=BOTH, expand=Y)
 text_box = Text(text_frame, height=5, width=30)  # text box
+text_box.config(font=font_settings)  # apply default font settings
 text_box.pack(side=LEFT, fill=BOTH, expand=Y)
 
 
@@ -161,4 +195,5 @@ root.config(menu=menu_bar)
 text_box.bind("<KeyRelease>", pinpoint_position)
 
 
+# mainloop
 root.mainloop()
