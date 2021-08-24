@@ -1,6 +1,5 @@
 """
 my text editor
-
 by : Kevin Liu
 Last Modified : 23 August 2021
 """
@@ -16,31 +15,33 @@ def pinpoint_position(event):
     var.set(status_text)
 
 
-def copy():
+def copy(event):
     global clipboard
     if 'Copied' not in var.get():
         var.set(var.get() + "       Copied.")
-    clipboard = text_box.get("1.0", "end-1c")
+    clipboard = text_box.selection_get()
 
 
-def cut():
-    pass
+def cut(event):
+    if text_box.selection_get():
+        text_box.delete("sel.first", "sel.last")
 
 
-def paste():
-    text_box.insert(END, clipboard)
+def paste(event):
+    position = text_box.index(INSERT)
+    text_box.insert(position, clipboard)
 
 
 def dark_mode():
     color = "dark gray"
     root.config(bg=color)
-    text_frame.config(bg=color)
-    text_box.config(bg=color)
+    text_frame.config(bg=color); text_box.config(bg=color)
     frame_toolbar.config(bg=color)
-    font_label.config(bg=color)
-    size_label.config(bg=color)
-    status_bar.config(bg=color)
-    frame_status.config(bg=color)
+    copy_btn.config(bg=color); cut_btn.config(bg=color); paste_btn.config(bg=color)
+    theme_btn.config(bg=color); family_btn.config(bg=color); size_label.config(bg=color)
+    font_add_size.config(bg=color); font_sub_size.config(bg=color)
+    font_label.config(bg=color); size_label.config(bg=color)
+    status_bar.config(bg=color); frame_status.config(bg=color)
     theme_btn.config(text="Light Mode", command=light_mode)
     root.update()
 
@@ -48,19 +49,19 @@ def dark_mode():
 def light_mode():
     color = "linen"
     root.config(bg=color)
-    text_frame.config(bg=color)
-    text_box.config(bg=color)
+    text_frame.config(bg=color); text_box.config(bg=color)
     frame_toolbar.config(bg=color)
-    font_label.config(bg=color)
-    size_label.config(bg=color)
-    status_bar.config(bg=color)
-    frame_status.config(bg=color)
+    copy_btn.config(bg=color); cut_btn.config(bg=color); paste_btn.config(bg=color)
+    theme_btn.config(bg=color); family_btn.config(bg=color); size_label.config(bg=color)
+    font_add_size.config(bg=color); font_sub_size.config(bg=color)
+    font_label.config(bg=color); size_label.config(bg=color)
+    status_bar.config(bg=color); frame_status.config(bg=color)
     theme_btn.config(text="Dark Mode", command=dark_mode)
     root.update()
 
 
 def new_file():
-    pass
+    text_box.delete("1.0", END)
 
 
 def open_file():
@@ -109,31 +110,32 @@ root.config(bg="linen")
 
 
 # toolbar
-frame_toolbar = Frame(root, height=30)  # frame
+frame_toolbar = Frame(root, height=30, bg="linen")  # frame
 frame_toolbar.pack(anchor=W)
-clipboard = None
-copy_btn = Button(frame_toolbar, text='Copy', command=copy)  # copy
+clipboard = ""
+copy_btn = Button(frame_toolbar, text='Copy', bg="linen", command=lambda: copy(False))  # copy
 copy_btn.pack(side=LEFT, padx=(5, 0))
-frame_toolbar.bind_class("<<Copy>>", copy)
-cut_btn = Button(frame_toolbar, text='Cut', command=cut)  # cut
+root.bind("<Control-Key-c>", copy)
+cut_btn = Button(frame_toolbar, text='Cut', bg="linen", command=lambda: cut(False))  # cut
 cut_btn.pack(side=LEFT, padx=5)
-paste_btn = Button(frame_toolbar, text='Paste', command=paste)  # paste
+root.bind("<Control-Key-x>", cut)
+paste_btn = Button(frame_toolbar, text='Paste', bg="linen", command=lambda: paste(False))  # paste
 paste_btn.pack(side=LEFT, padx=5)
-frame_toolbar.bind_class("<<Paste>>", paste)
-theme_btn = Button(frame_toolbar, text='Dark mode', command=dark_mode)  # dark mode
+root.bind("<Control-Key-v>", paste)
+theme_btn = Button(frame_toolbar, text='Dark mode', bg="linen", command=dark_mode)  # dark mode
 theme_btn.pack(side=LEFT, padx=(0, 5))
 font_label = Label(frame_toolbar, text="Font", bg="linen")  # font label
 font_label.pack(side=LEFT, padx=(10, 0))
-font_families = ("Calibri", "Helvetica", "Damascus", "Athelas")  # families, you add as many as you want
+font_families = ("Calibri", "Damascus", "Rockwell")  # families, you add as many as you want
 font_family = font_families[0]  # default family
 font_family_var = StringVar(); font_family_var.set(font_family)
-family_btn = Button(frame_toolbar, textvariable=font_family_var, width=7, command=change_font)  # button to change font
+family_btn = Button(frame_toolbar, textvariable=font_family_var, width=7, bg="linen", command=change_font)  # button to change font
 family_btn.pack(side=LEFT, padx=5)
 size = 12  # default size
 size_var = IntVar(); size_var.set(size)
 size_label = Label(frame_toolbar, textvariable=size_var, bg="linen")  # font size label
-font_add_size = Button(frame_toolbar, text="+", font=(None, 14), command=add_size)  # add size button
-font_sub_size = Button(frame_toolbar, text="-", font=(None, 14), command=sub_size)  # subtract size button
+font_add_size = Button(frame_toolbar, text="+", width=7, font=(None, 8), bg="linen", command=add_size)  # add size button
+font_sub_size = Button(frame_toolbar, text="-", width=7, font=(None, 8), bg="linen", command=sub_size)  # subtract size button
 font_add_size.pack(side=LEFT, padx=5)  # first pack + button
 size_label.pack(side=LEFT, padx=5)  # second pack label showing current size
 font_sub_size.pack(side=LEFT, padx=5)  # finally pack - button
@@ -143,28 +145,28 @@ font_settings = font.Font(family=font_family, size=size)  # default font setting
 
 
 # text area
-text_frame = Frame(root, height=30)  # frame
+text_frame = Frame(root, height=30, bg="linen")  # frame
 text_frame.pack(anchor=CENTER, fill=BOTH, expand=Y)
-text_box = Text(text_frame, height=5, width=30)  # text box
+text_box = Text(text_frame, height=5, width=30, bg="linen")  # text box
 text_box.config(font=font_settings)  # apply default font settings
 text_box.pack(side=LEFT, fill=BOTH, expand=Y)
 
 
 # scrollbar
-vertical_scrollbar = Scrollbar(text_frame)  # scrollbar
+vertical_scrollbar = Scrollbar(text_frame, bg="linen")  # scrollbar
 vertical_scrollbar.pack(side=RIGHT, fill=Y)
 vertical_scrollbar.config(command=text_box.yview)
 text_box.config(yscrollcommand=vertical_scrollbar.set)
 
 
 # status area
-frame_status = Frame(root, bg="light gray")  # frame
+frame_status = Frame(root, bg="linen")  # frame
 frame_status.pack(anchor=CENTER, fill=X)
 sep = Separator(frame_status, orient=HORIZONTAL)  # separator
 sep.pack(fill=X, padx=1)
 var = StringVar()  # text variable for status
 status_text = "Status: INSERT MODE"  # for mode and position
-status_bar = Label(frame_status, textvariable=var, bg="light gray")
+status_bar = Label(frame_status, textvariable=var, bg="linen")
 status_bar.pack(side=BOTTOM, anchor=S + W)
 var.set(status_text)  # init text
 
