@@ -134,7 +134,7 @@ delete_all_File_CSV_1()
 
 csv_file = open("File_CSV_1.csv", "a")
 
-# note.txt
+# note.txt.txt
 # my laptop couldn't run the loop 5000 times so I did 4800 times + 200 times
 for t in range(5000):
     studentID = generate_studentID()

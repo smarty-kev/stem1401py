@@ -38,7 +38,7 @@ module : os, remove()    - remove file
 module : os, rmdir()     - remove directory (only can remove an empty directory)
 module : shutil, rmtree()    - remove a non-empty directory
 
-# note.txt removing file and directory is always dangerous - proceed with caution
+# note.txt.txt removing file and directory is always dangerous - proceed with caution
 """
 
 """
