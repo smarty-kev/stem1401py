@@ -1,0 +1,3 @@
+OOP in python, RE (regular expression), Concurrent Prog. (threading)
+
+paradigm - style/idea (a method to solve a problem)
