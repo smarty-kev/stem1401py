@@ -1,0 +1,9 @@
+day 99
+
+Object :
+Core/kernel -> data
+outside -> behaviour (methods)
+
+Encapsulation
+Inheritance
+Polymorphism
