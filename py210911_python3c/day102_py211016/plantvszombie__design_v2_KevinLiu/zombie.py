@@ -9,3 +9,9 @@ class Zombie(Entity):
     def __init__(self, hp, coord, atk_dmg):
         super().__init__(hp, coord)
         self.atk_dmg = atk_dmg
+
+    def move(self):
+        pass
+
+    def end_game(self):  # eat your brains
+        pass
