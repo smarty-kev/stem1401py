@@ -3,7 +3,7 @@
 Date: 2021-02-14
 1. Try out label widget
 Description:
-create a window based on previous homework
+create a window based on previous plantvszombie__design_v2_KevinLiu
 set icon, title, dimension, maxsize, minsize, bg and any other options for the window as much as you know
 create at least 2 text Labels
 set dimension, font, fg, bg, font and any other options you know.
@@ -43,19 +43,19 @@ text_label_1.pack(), text_label_2.pack()
 
 # image labels
 try:
-    gif_photo = tk.PhotoImage(file="homework/cute_gif.gif")
+    gif_photo = tk.PhotoImage(file="plantvszombie__design_v2_KevinLiu/cute_gif.gif")
     image_label_1 = tk.Label(root, height=200, width=400, image=gif_photo)
     image_label_1.pack()
 except tk._tkinter.TclError as fe:
     print("The file <cute_gif.gif> was not found")
 try:
-    png_photo = tk.PhotoImage(file="homework/cute_png.png")
+    png_photo = tk.PhotoImage(file="plantvszombie__design_v2_KevinLiu/cute_png.png")
     image_label_2 = tk.Label(root, height=200, width=400, image=png_photo)
     image_label_2.pack()
 except tk._tkinter.TclError as fe:
     print("The file <cute_png.png> was not found")
 try:
-    jpg_obj = Image.open("homework/llama.jpg")
+    jpg_obj = Image.open("plantvszombie__design_v2_KevinLiu/llama.jpg")
     jpg_photo = ImageTk.PhotoImage(jpg_obj)
     image_label_3 = tk.Label(root, height=200, width=400, image=jpg_photo)
     image_label_3.pack()

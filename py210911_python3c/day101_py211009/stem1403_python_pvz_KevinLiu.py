@@ -25,6 +25,12 @@ class Entity:
         self.hp = hp
         self.coordinate = coord
 
+    def spawn(self, x, y):
+        self.coordinate = [x, y]
+
+    def destroy(self):
+        pass
+
 
 class Plant(Entity):
     # Class variables

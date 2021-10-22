@@ -3,7 +3,7 @@
 Date: 2021-01-30
 1. Try out label widget
 Description:
-create a window based on previous homework
+create a window based on previous plantvszombie__design_v2_KevinLiu
 set icon, title, dimension, maxsize, minsize, bg and any other options for the window as much as you know
 create a text Label
 set dimension, font, fg, bg, font and any other options which are necessary you think.

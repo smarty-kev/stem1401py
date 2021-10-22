@@ -1,0 +1,6 @@
+attritube - color
+state - color = "orange"
+
+
+class - attribute, state, behaviour
+object - identity, state, behaviour

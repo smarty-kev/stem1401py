@@ -1,7 +1,7 @@
 """
 Layout manager:  pack()
 side
-homework: list bitmap from left to right
+plantvszombie__design_v2_KevinLiu: list bitmap from left to right
 """
 from tkinter import *
 from tkinter.ttk import Separator
