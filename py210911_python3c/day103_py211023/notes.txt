@@ -1,0 +1,14 @@
+class definition:
+- class name
+- attributes
+- methods
+- comments
+
+
+instance variables != variables
+
+careful of __int__!! use __init__
+
+
+object(instance) - instantiation of a class
+class - description for object (it has no memory or storage allocated)
