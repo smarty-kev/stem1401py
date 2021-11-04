@@ -1,0 +1,2 @@
+class diagram - no actual interaction between classes or objects (only relativity)
+sequence diagram
