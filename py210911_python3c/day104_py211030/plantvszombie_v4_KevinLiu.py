@@ -18,7 +18,7 @@ Submit your code including your description of the battle process
 
 class Resource():
     # Class variables
-    def __init__(self, starting_value):
+    def __init__(self, starting_value=50):
         self.sun_count = starting_value
 
     # behaviours
