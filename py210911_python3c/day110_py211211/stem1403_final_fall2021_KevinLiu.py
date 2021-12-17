@@ -2,7 +2,7 @@
 Boxing Day Project : v1
 Author : Kevin Liu
 Started : 11 December 2021
-Last modified : 11 December 2021
+Last modified : 17 December 2021
 """
 
 import datetime
@@ -53,7 +53,7 @@ class TaxRate:
 
 
 class Order:
-    LAST_ORDER_NUMBER = 1001
+    LAST_ORDER_NUMBER = 202112260001
 
     @staticmethod
     def get_next_order_no():
@@ -153,7 +153,7 @@ class Order:
 # main program
 peter_address = Address("9-1000", "Boul. Decarie", "Montreal", "Quebec", "Canada", "H2A 1K3")
 customer1 = Customer("Peter", peter_address, "Peter", peter_address)
-order1 = Order(customer1)
+order1 = Order(customer1, "12-26-2021", "20:00:00")
 
 iphone = OrderItem("101001", "iPhone 13", "64GB Black", "1200")
 flash_drive = OrderItem("102005", "USB Flash Drive", "8GB", "14.99", 2)
@@ -163,5 +163,21 @@ order1.add_item(iphone)
 order1.add_item(flash_drive)
 order1.add_item(book)
 
+order1.pay_bill()
 print(order1)
+print("\n")  # two new lines for next order
 
+
+Order.get_next_order_no()
+jack_address = Address("3-1500", "Boul. Sherbrooke Est.", "Quebec City", "Quebec", "Canada", "K1B 2H6")
+customer1.receiver_name = "Jack"
+customer1.shipping_address = jack_address
+order2 = Order(customer1, "12-26-2021", "20:30:00")
+
+box_of_chocolate = OrderItem("401002", "Chocolate", "12 pieces 360g", "9.99")
+game_disc = OrderItem("502003", "Game disc", "Call of Duty, Elder Scroll for XBox", "11.99", 2)
+order2.add_item(box_of_chocolate)
+order2.add_item(game_disc)
+
+order2.pay_bill()
+print(order2)
