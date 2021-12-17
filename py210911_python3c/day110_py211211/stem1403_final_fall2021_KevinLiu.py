@@ -34,7 +34,7 @@ class OrderItem:
         self.item_description = item_description
         self.unit_price = unit_price
         self.item_quantity = item_quantity
-        self.amount = unit_price * item_quantity
+        self.amount = float(unit_price) * item_quantity
 
 
 class Status:
@@ -118,16 +118,14 @@ class Order:
         for info in items_info:
             count += 1
             order_info += str(info) + " "
-            if count == 7:
+            if count % 7 == 0:
                 order_info += "\n"  # to switch line
         order_info += "================\n"
 
         # bill info
         subtotal = 0
-        item_price_index = 6  # index of the price of the first item
-        for price in items_info[item_price_index]:
-            subtotal += int(price)
-            item_price_index += 7
+        for item in self.items:
+            subtotal += float(item.amount)
 
         if subtotal > 50:
             freight = 0
@@ -144,7 +142,7 @@ class Order:
                     f"Freight:      {freight}\n" \
                     f"GST @5.000%:  {tax_gst}\n" \
                     f"QST @9.975%   {tax_gst}\n" \
-                    f"Total         {total}"   \
+                    f"Total         {total}\n"   \
                     f"================\n" \
                     f"Status: {self.order_status}, {self.shipment_status}"
         order_info += bill_info
@@ -152,12 +150,18 @@ class Order:
         return order_info
 
 
+# main program
 peter_address = Address("9-1000", "Boul. Decarie", "Montreal", "Quebec", "Canada", "H2A 1K3")
 customer1 = Customer("Peter", peter_address, "Peter", peter_address)
-
 order1 = Order(customer1)
 
 iphone = OrderItem("101001", "iPhone 13", "64GB Black", "1200")
+flash_drive = OrderItem("102005", "USB Flash Drive", "8GB", "14.99", 2)
+book = OrderItem("201006", "Book", "The Art of Code", "59.99")
+
 order1.add_item(iphone)
+order1.add_item(flash_drive)
+order1.add_item(book)
+
 print(order1)
 
