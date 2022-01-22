@@ -1,0 +1,2 @@
+test cases (specific) are a part of test scenarios (vague)
+
