@@ -1,0 +1,12 @@
+INHERITANCE IN Object-Oriented
+
+
+- creating new class using details of an existing class without modifying it
+
+ex:
+Class A and Class B
+Class B inherits all the properties and methods of Class A
+
+class A = parent class, superclass, base class
+class B = child class, subclass, derived class
+
