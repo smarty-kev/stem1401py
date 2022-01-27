@@ -3,6 +3,8 @@ INHERITANCE IN Object-Oriented
 
 - creating new class using details of an existing class without modifying it
 
+
+single level inheritance
 ex:
 Class A and Class B
 Class B inherits all the properties and methods of Class A
@@ -10,3 +12,17 @@ Class B inherits all the properties and methods of Class A
 class A = parent class, superclass, base class
 class B = child class, subclass, derived class
 
+ex:
+Animal = ClassA
+Dog    = ClassB
+
+
+multi-level inheritance
+class A <- class B <- class C
+ex:
+class GrandParent:
+    pass
+class Parent(GrandParent):
+    pass
+class Child(Parent):
+    pass
