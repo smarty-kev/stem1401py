@@ -1,0 +1,10 @@
+design is very important in oo
+
+python 2
+class Parent(object):
+    pass
+
+
+single = A <- B
+multiple = A <- B <- C
+hierarchical = A <- B, A <- C
