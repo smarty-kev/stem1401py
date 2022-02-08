@@ -5,6 +5,17 @@ Computer(cpu, gpu, ram, storage, power_supply, os, open(), close())
 Laptop(keyboard, screen, trackpad, battery)
 SmartPhone(touchscreen, camera, keyboard=optional, home_button=optional)
 A laptop is a computer, a smartphone is a computer, but a phone is not a laptop.
+
+
+Laptop
+carry()
+type() - input
+recharge()
+
+Smartphone
+dial()
+flashlight()
+recharge()
 """
 
 

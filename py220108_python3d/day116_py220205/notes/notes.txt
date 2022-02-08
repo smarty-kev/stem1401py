@@ -1,0 +1,13 @@
+design is very IMPORTANT
+
+hierarchical : Parent -> ChildA | Parent -> ChildB
+
+
+multiple inheritance : ParentA -> Child | ParentB -> Child
+
+parentA
+
+parentB
+
+child(parentA, parentB)
+priority goes to parentA (if conflict)
