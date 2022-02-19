@@ -51,7 +51,7 @@ class Child2(Father, Mother):
         super().__init__(hair_color, eye_color, metabolism, diseases, height)
 
     def childs_behaviours(self):
-        print("Behaviours of Child")
+        print("Behaviours of Child TWO")
 
 
 # family
