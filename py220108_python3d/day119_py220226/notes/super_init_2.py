@@ -1,26 +1,21 @@
 """
 super and init
 
-child directly inherits init() of parent
+child overrides init() of parent and use its own init()
 
-parameter: number of positional arguments must match
+no properties
 """
 
 
 class Parent:
-    def __init__(self, name):
+    def __init__(self):
         print('Parent __init__() called.')
-        self.name = name
 
 
 class Child(Parent):
-    pass
+    def __init__(self):
+        print('Child __init__() called.')
 
 
 # main
-
-# c1 = Child()
-# TypeError: __init__() missing 1 required positional argument: 'name'
-
-# must pass positional argument: name
-c1 = Child('Peter')
+c1 = Child()
