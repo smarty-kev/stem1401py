@@ -17,7 +17,7 @@ ParentB has a property: age
 class ParentA:
     def __init__(self, name):
         print('ParentA __init__() called.')
-        self.name = name +' at ParentA'
+        self.name = name + ' at ParentA'
 
 
 class ParentB:
