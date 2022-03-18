@@ -1,0 +1,13 @@
+Importance of Inheritance
+
+
+
+Re-Usability
+
+Saves time and effort
+
+Closeness with the real world
+
+Easy modification
+
+Transitive Nature of inheritance
