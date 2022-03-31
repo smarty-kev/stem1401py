@@ -1,0 +1,11 @@
+polymorphism
+poly = "many"
+morphism = "forms"
+
+inheritance and overriding
+
+
+
+for hw
+
+different classes for every tax type (GST HST etc...)
