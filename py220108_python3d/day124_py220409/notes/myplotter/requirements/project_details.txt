@@ -1,0 +1,52 @@
+Design a plotting application.
+Project:  My Plotter
+Project goals:
+OOP in Python
+Design system with class diagram
+Incremental iterative development process
+Business goals:
+You are asked to develop a plotting application for design teams to do product design and modeling work.
+Requirements of Standard Edition:
+An end-user may input a name of shape from their keyboard.
+The application then draws a shape that the user desires.
+The basic parameter(s) of a shape should print on the console, which determines possible measurements of a shape.
+i.e. perimeter, area, surface area, volume, etc.
+The perimeter of a 2D shape should print on the console.
+The area of a 2D shape should print on the console.
+The volume of a 3D shape should print on the console.
+The surface area of a 3D shape should print on the console.
+The starter edition supports basic 2D shapes including:
+Rectangle
+Square
+Circle
+Triangle
+The starter edition also supports 3D shapes including:
+Sphere
+Cube
+Requirements of Pro Edition:
+Your development team plans to develop a professional edition at the same time to meet possible requirements and changes in near feature.
+The professional edition supports additional 2D shapes such as:
+Parallelogram
+Oval
+Rhombus
+Right Triangle
+The professional edition also supports to draw 3D shapes including:
+Pyramid
+Cylinder
+The professional edition provides all features of the starter edition.
+The professional edition provides additional features.
+It allows users to fill with a specified color.
+i.e. Red, Blue, Yellow, Green, White, Black, etc.
+Task
+Please design this product line to meet all the needs of the market.
+Hints:
+A class diagram is required.
+A diagram of system structure is required.
+Coding in multi-module style.
+The parameters needed to calculate measurements of shapes should be determined.
+Reference
+https://7esl.com/shapes-vocabulary/
+https://www.calculator.net/volume-calculator.html
+https://www.calculator.net/area-calculator.html
+https://www.calculator.net/surface-area-calculator.html
+https://www.gigacalculator.com/calculators/perimeter-calculator.php

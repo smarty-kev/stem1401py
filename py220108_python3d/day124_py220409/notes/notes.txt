@@ -1,0 +1,5 @@
+object of class = instance
+
+
+allocate memory
+__init__() method

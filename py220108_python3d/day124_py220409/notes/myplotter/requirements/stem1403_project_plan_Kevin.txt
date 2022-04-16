@@ -1,0 +1,39 @@
+Kevin
+Project Plan
+14 April 2022
+My Plotter
+
+
+The project objectives and goals:
+
+
+OOP in Python
+Design system with class diagram
+Incremental iterative development process
+
+
+The final deliverables and acceptance criteria:
+
+
+A class diagram is required.
+A diagram of system structure is required.
+Coding in multi-module style.
+
+An end-user may input a name of shape from their keyboard.
+The application then draws a shape that the user desires.
+The basic parameter(s) of a shape should print on the console, which determines possible measurements of a shape.
+i.e. perimeter, area, surface area, volume, etc.
+The perimeter of a 2D shape should print on the console.
+The area of a 2D shape should print on the console.
+The volume of a 3D shape should print on the console.
+The surface area of a 3D shape should print on the console.
+
+The professional edition provides additional features.
+It allows users to fill with a specified color.
+
+
+Schedule:
+
+finish class diagrams and diagram of system structure by 16 april
+finish entities and service program                   by 23 april
+finish client                                         by -------- don't know yet
