@@ -98,18 +98,22 @@ class Circle(TwoDShape):
         return perimeter
 
     def findArea(self):
-        area = int(self.a) * int(self.b)
+        area = 2 * PI * self.r
         return area
 
 
 class Oval(TwoDShape):
     def __init__(self, r1=int, r2=int,  shape_type="Oval"):
-        self.r1 = int(r1)
-        self.r2 = int(r2)
+        self.r1 = int(r1)  # major radius
+        self.r2 = int(r2)  # minor radius
         super().__init__(shape_type=shape_type)
 
     def findPerimeter(self):
-        perimeter = 2 * (int(self.a) + int(self.b))
+        r1 = self.r1  # major radius
+        r2 = self.r2  # minor radius
+        h = (r1 - r2) ** 2 / (r1 - r2) ** 2
+        perimeter = PI * (r1 + r2) * (1 + h * 0.25 + (h**2) * (1/64) + (h**3) * (1/256) + (h**4) * (25/16384) +
+                                      (h**5) * (49/65536) + (h**6) * (441/1048576))
         return perimeter
 
     def findArea(self):
