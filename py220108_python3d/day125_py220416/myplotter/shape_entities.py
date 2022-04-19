@@ -11,12 +11,12 @@ PI = 3.14159265358979
 
 
 class Shape:
-    def __init__(self, shape_type=None):
+    def __init__(self, shape_type=""):
         self.shape_type = shape_type
 
 
 class TwoDShape(Shape):
-    def __init__(self, shape_type=None):
+    def __init__(self, shape_type=""):
         super().__init__(shape_type)
 
     def findPerimeter(self):
@@ -30,7 +30,7 @@ class Rectangle(TwoDShape):
     def __init__(self, a=int, b=int, shape_type="Rectangle"):
         self.a = int(a)
         self.b = int(b)
-        super().__init__(shape_type="Rectangle")
+        super().__init__(shape_type=shape_type)
 
     def findPerimeter(self):
         perimeter = 2 * (self.a + self.b)
@@ -41,7 +41,7 @@ class Rectangle(TwoDShape):
         return area
 
 
-class Square(Rectangle):
+class Square(TwoDShape):
     def __init__(self, a=int, shape_type="Square"):
         self.a = int(a)
         super().__init__(shape_type=shape_type)
@@ -57,8 +57,8 @@ class Square(Rectangle):
 
 class Triangle(TwoDShape):
     def __init__(self, base=int, h=int, side2=int, side3=int, shape_type="Triangle"):
-        self.base  = int(base)  # base = side1
-        self.h     = int(h)
+        self.base = int(base)  # base = side1
+        self.h = int(h)
         self.side2 = int(side2)
         self.side3 = int(side3)
         super().__init__(shape_type)
@@ -72,7 +72,7 @@ class Triangle(TwoDShape):
         return area
 
 
-class RightTriangle(Triangle):
+class RightTriangle(TwoDShape):
     def __init__(self, a=int, b=int, hypotenuse=int,  shape_type="Right Triangle"):
         self.a = int(a)
         self.b = int(b)
@@ -94,11 +94,11 @@ class Circle(TwoDShape):
         super().__init__(shape_type)
 
     def findPerimeter(self):
-        perimeter = self.r * PI
+        perimeter = 2 * self.r * PI
         return perimeter
 
     def findArea(self):
-        area = 2 * PI * self.r
+        area = PI * (self.r ** 2)
         return area
 
 
@@ -117,7 +117,7 @@ class Oval(TwoDShape):
         return perimeter
 
     def findArea(self):
-        area = int(self.a) * int(self.b)
+        area = PI * self.r1 * self.r2
         return area
 
 
@@ -128,35 +128,33 @@ class Parallelogram(TwoDShape):
         super().__init__(shape_type=shape_type)
 
     def findPerimeter(self):
-        perimeter = 2 * (int(self.a) + int(self.b))
+        perimeter = 2 * (self.a + self.b)
         return perimeter
 
     def findArea(self):
-        area = int(self.a) * int(self.b)
+        area = self.a * self.b
         return area
 
 
 class Rhombus(Parallelogram):
-    def __init__(self, d1=int, d2=int, shape_type="Rhombus"):
+    def __init__(self, d1=int, d2=int, side=int, shape_type="Rhombus"):
         self.d1 = int(d1)
         self.d2 = int(d2)
+        self.side = int(side)
         super().__init__(shape_type=shape_type)
 
     def findPerimeter(self):
-        perimeter = 2 * (int(self.a) + int(self.b))
+        perimeter = 4 * self.side
         return perimeter
 
     def findArea(self):
-        area = int(self.a) * int(self.b)
+        area = (self.d1 * self.d2) / 2
         return area
 
 
 class ThreeDShape(Shape):
     def __init__(self, shape_type=None):
         super().__init__(shape_type)
-
-    def findPerimeter(self):
-        pass
 
     def findArea(self):
         pass
@@ -170,14 +168,13 @@ class Sphere(ThreeDShape):
         self.r = int(r)
         super().__init__(shape_type)
 
-    def findPerimeter(self):
-        pass
-
     def findArea(self):
-        pass
+        area = 4 * PI * (self.r ** 2)
+        return area
 
     def findVolume(self):
-        pass
+        volume = (4 * PI * (self.r ** 3)) / 3
+        return volume
 
 
 class Cylinder(ThreeDShape):
@@ -186,14 +183,16 @@ class Cylinder(ThreeDShape):
         self.h = int(h)
         super().__init__(shape_type)
 
-    def findPerimeter(self):
-        pass
-
     def findArea(self):
-        pass
+        area_rectangle = self.h * 2 * self.r * PI
+        area_circle = PI * (self.r ** 2)
+        area = 2 * area_circle + area_rectangle
+        return area
 
     def findVolume(self):
-        pass
+        area_circle = PI * (self.r ** 2)
+        area = area_circle * self.h
+        return area
 
 
 class Cube(ThreeDShape):
@@ -201,27 +200,26 @@ class Cube(ThreeDShape):
         self.a = int(a)
         super().__init__(shape_type)
 
-    def findPerimeter(self):
-        pass
-
     def findArea(self):
-        pass
+        area_square = self.a ** 2
+        area = 6 * area_square
+        return area
 
     def findVolume(self):
-        pass
+        volume = self.a ** 3
+        return volume
 
 
 class Pyramid(ThreeDShape):
-    def __init__(self, h=int, base_shape=TwoDShape, shape_type="Pyramid"):
+    def __init__(self, h=int, base_obj=TwoDShape, shape_type="Pyramid"):
         self.h = int(h)
-        self.base_shape = base_shape
+        self.base_shape = base_obj
         super().__init__(shape_type)
 
-    def findPerimeter(self):
-        pass
-
     def findArea(self):
-        pass
+        area_base = self.base_shape.findArea
+        # if self.base_shape == "Rec"
 
     def findVolume(self):
         pass
+
