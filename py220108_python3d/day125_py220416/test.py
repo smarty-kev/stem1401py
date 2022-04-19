@@ -1,0 +1,1 @@
+print(type(int(9)/2))
