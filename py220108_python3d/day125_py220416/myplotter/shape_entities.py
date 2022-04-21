@@ -144,14 +144,14 @@ class Parallelogram(TwoDShape):
 
 
 class Rhombus(TwoDShape):
-    def __init__(self, d1=int, d2=int, side=int, shape_type="Rhombus"):
+    def __init__(self, d1=int, d2=int, a=int, shape_type="Rhombus"):
         self.d1 = int(d1)
         self.d2 = int(d2)
-        self.side = int(side)
+        self.a = int(a)
         super().__init__(shape_type)
 
     def findPerimeter(self):
-        perimeter = 4 * self.side
+        perimeter = 4 * self.a
         return perimeter
 
     def findArea(self):
@@ -227,20 +227,22 @@ class Pyramid(ThreeDShape):
         area_base = self.base_shape.findArea()
 
         if self.base_shape.shape_type == "Rectangle":
+
             # print("rectangle")
-            apothem_side_a = 0
-            triangles_area = 2 * (Triangle(self.base_shape.a, ).getArea()) + 2 * (Triangle(self.base_shape.b))
 
-        if self.base_shape.shape_type == "Square":
+            apothem_side_a = RightTriangle(self.base_shape.b/2, self.h).findHypotenuse()
+            apothem_side_b = RightTriangle(self.base_shape.a/2, self.h).findHypotenuse()
+            triangles_area = 2 * (Triangle(self.base_shape.a, apothem_side_a).getArea()) + \
+                             2 * (Triangle(self.base_shape.b, apothem_side_b).getArea())
+
+        if self.base_shape.shape_type == "Square" or "Rhombus":
+
             # print("square")
-            pass
 
-        if self.base_shape.shape_type == "Rhombus":
-            # print("rhombus")
-            pass
+            apothem_side = RightTriangle(self.base_shape.a/2, self.h)
+            triangles_area = 4 * (Triangle(self.base_shape.a, apothem_side).getArea())
 
-
-        area = 0
+        area = area_base + triangles_area
         return area
 
     def findVolume(self):
