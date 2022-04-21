@@ -29,9 +29,9 @@ class TwoDShape(Shape):
 
 
 class Rectangle(TwoDShape):
-    def __init__(self, a=int, b=int, shape_type="Rectangle"):
-        self.a = int(a)
-        self.b = int(b)
+    def __init__(self, a=float, b=float, shape_type="Rectangle"):
+        self.a = float(a)
+        self.b = float(b)
         super().__init__(shape_type)
 
     def findPerimeter(self):
@@ -44,8 +44,8 @@ class Rectangle(TwoDShape):
 
 
 class Square(TwoDShape):
-    def __init__(self, a=int, shape_type="Square"):
-        self.a = int(a)
+    def __init__(self, a=float, shape_type="Square"):
+        self.a = float(a)
         super().__init__(shape_type)
 
     def findPerimeter(self):
@@ -58,11 +58,13 @@ class Square(TwoDShape):
 
 
 class Triangle(TwoDShape):
-    def __init__(self, base=int, h=int, side2=int, side3=int, shape_type="Triangle"):
-        self.base = int(base)  # base = side1
-        self.h = int(h)
-        self.side2 = int(side2)
-        self.side3 = int(side3)
+    def __init__(self, base=float, h=float, side2=float, side3=float, shape_type="Triangle"):
+        self.base = float(base)  # base = side1
+        self.h = float(h)
+        if side2 != float:
+            self.side2 = float(side2)
+        if side3 != float:
+            self.side3 = float(side3)
         super().__init__(shape_type)
 
     def findPerimeter(self):
@@ -75,11 +77,11 @@ class Triangle(TwoDShape):
 
 
 class RightTriangle(TwoDShape):
-    def __init__(self, a=int, b=int, hypotenuse=int,  shape_type="Right Triangle"):
-        self.a = int(a)
-        self.b = int(b)
-        if hypotenuse != int:
-            self.hypotenuse = int(hypotenuse)
+    def __init__(self, a=float, b=float, hypotenuse=float,  shape_type="Right Triangle"):
+        self.a = float(a)
+        self.b = float(b)
+        if hypotenuse != float:
+            self.hypotenuse = float(hypotenuse)
         super().__init__(shape_type)
 
     def findPerimeter(self):
@@ -96,8 +98,8 @@ class RightTriangle(TwoDShape):
 
 
 class Circle(TwoDShape):
-    def __init__(self, r=int, shape_type="Circle"):
-        self.r = int(r)
+    def __init__(self, r=float, shape_type="Circle"):
+        self.r = float(r)
         super().__init__(shape_type)
 
     def findPerimeter(self):
@@ -110,9 +112,9 @@ class Circle(TwoDShape):
 
 
 class Oval(TwoDShape):
-    def __init__(self, r1=int, r2=int,  shape_type="Oval"):
-        self.r1 = int(r1)  # major radius
-        self.r2 = int(r2)  # minor radius
+    def __init__(self, r1=float, r2=float,  shape_type="Oval"):
+        self.r1 = float(r1)  # major radius
+        self.r2 = float(r2)  # minor radius
         super().__init__(shape_type)
 
     def findPerimeter(self):
@@ -129,9 +131,9 @@ class Oval(TwoDShape):
 
 
 class Parallelogram(TwoDShape):
-    def __init__(self, a=int, b=int,  shape_type="Parallelogram"):
-        self.a = int(a)
-        self.b = int(b)
+    def __init__(self, a=float, b=float,  shape_type="Parallelogram"):
+        self.a = float(a)
+        self.b = float(b)
         super().__init__(shape_type)
 
     def findPerimeter(self):
@@ -144,10 +146,10 @@ class Parallelogram(TwoDShape):
 
 
 class Rhombus(TwoDShape):
-    def __init__(self, d1=int, d2=int, a=int, shape_type="Rhombus"):
-        self.d1 = int(d1)
-        self.d2 = int(d2)
-        self.a = int(a)
+    def __init__(self, d1=float, d2=float, a=float, shape_type="Rhombus"):
+        self.d1 = float(d1)
+        self.d2 = float(d2)
+        self.a = float(a)
         super().__init__(shape_type)
 
     def findPerimeter(self):
@@ -171,8 +173,8 @@ class ThreeDShape(Shape):
 
 
 class Sphere(ThreeDShape):
-    def __init__(self, r=int, shape_type="Sphere"):
-        self.r = int(r)
+    def __init__(self, r=float, shape_type="Sphere"):
+        self.r = float(r)
         super().__init__(shape_type)
 
     def findArea(self):
@@ -185,9 +187,9 @@ class Sphere(ThreeDShape):
 
 
 class Cylinder(ThreeDShape):
-    def __init__(self, r=int, h=int, shape_type="Cylinder"):
-        self.r = int(r)
-        self.h = int(h)
+    def __init__(self, r=float, h=float, shape_type="Cylinder"):
+        self.r = float(r)
+        self.h = float(h)
         super().__init__(shape_type)
 
     def findArea(self):
@@ -203,8 +205,8 @@ class Cylinder(ThreeDShape):
 
 
 class Cube(ThreeDShape):
-    def __init__(self, a=int, shape_type="Square"):
-        self.a = int(a)
+    def __init__(self, a=float, shape_type="Square"):
+        self.a = float(a)
         super().__init__(shape_type)
 
     def findArea(self):
@@ -218,8 +220,8 @@ class Cube(ThreeDShape):
 
 
 class Pyramid(ThreeDShape):
-    def __init__(self, h=int, base_obj=TwoDShape, shape_type="Pyramid"):
-        self.h = int(h)
+    def __init__(self, h=float, base_obj=TwoDShape, shape_type="Pyramid"):
+        self.h = float(h)
         self.base_shape = base_obj
         super().__init__(shape_type)
 
@@ -232,19 +234,20 @@ class Pyramid(ThreeDShape):
 
             apothem_side_a = RightTriangle(self.base_shape.b/2, self.h).findHypotenuse()
             apothem_side_b = RightTriangle(self.base_shape.a/2, self.h).findHypotenuse()
-            triangles_area = 2 * (Triangle(self.base_shape.a, apothem_side_a).getArea()) + \
-                             2 * (Triangle(self.base_shape.b, apothem_side_b).getArea())
+            triangles_area = 2 * (Triangle(self.base_shape.a, apothem_side_a).findArea()) + \
+                             2 * (Triangle(self.base_shape.b, apothem_side_b).findArea())
 
         if self.base_shape.shape_type == "Square" or "Rhombus":
 
             # print("square")
 
-            apothem_side = RightTriangle(self.base_shape.a/2, self.h)
-            triangles_area = 4 * (Triangle(self.base_shape.a, apothem_side).getArea())
+            apothem_side = RightTriangle(self.base_shape.a/2, self.h).findHypotenuse()
+            triangles_area = 4 * (Triangle(self.base_shape.a, apothem_side).findArea())
 
         area = area_base + triangles_area
         return area
 
     def findVolume(self):
-        pass
-
+        area_base = self.base_shape.findArea()
+        volume = (area_base * self.h) / 3
+        return volume
