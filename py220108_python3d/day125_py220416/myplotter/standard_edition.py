@@ -13,7 +13,8 @@ The surface area of a 3D shape should print on the console.
 """
 
 
-from shape_entities import *
+from shape_entities import Shape, TwoDShape, Circle, Rectangle, Square, Triangle, \
+                                  ThreeDShape, Sphere, Cube
 
 
 class PerimeterFinder:
@@ -40,9 +41,17 @@ class VolumeFinder:
         pass
 
 
+class Drawer:
+    def drawShape(self):
+        pass
+
+    def drawShapes(self):
+        pass
+
+
 class MyPlotter(PerimeterFinder, AreaFinder, VolumeFinder):
-    def __init__(self, *shapes):
-        self.__shapes = shapes
+    def __init__(self):
+        self.drawer = Drawer()
 
     def drawShape(self):
         pass

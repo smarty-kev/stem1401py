@@ -1,9 +1,11 @@
 """
 2D Shapes:
-Circle, Rectangle, Square, Triangle, Right Triangle, Oval, Parallelogram, Rhombus
+Circle, Rectangle, Square, Triangle  # standard
+Right Triangle, Oval, Parallelogram, Rhombus  # pro
 
 3D Shapes:
-Sphere, Cube, Pyramid, Cylinder
+Sphere, Cube  # standard
+Pyramid, Cylinder  # pro
 """
 
 import math

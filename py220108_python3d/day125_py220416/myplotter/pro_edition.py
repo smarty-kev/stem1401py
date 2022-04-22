@@ -14,3 +14,19 @@ The surface area of a 3D shape should print on the console.
 # different from standard
 It allows users to fill with a specified color.
 """
+
+
+from shape_entities import *
+from standard_edition import PerimeterFinder, AreaFinder, VolumeFinder, Drawer, MyPlotter
+
+
+class Colorer:
+    def fillColor(self):
+        pass
+
+
+class MyProPlotter(MyPlotter):
+    def __init__(self):
+        super().__init__()
+        self.colorer = Colorer()
+
