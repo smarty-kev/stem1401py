@@ -1,0 +1,66 @@
+Class Members (11)
+
+attributes are private to each instance
+methods are public to all instances
+
+
+(11.1)
+
+class  = model
+object = instance of a class
+you can create as many instances as you want
+
+to create an object (instance):
+- Allocate memory space for objects
+- Initializing object by calling init() method
+
+After, a real object exists in the memory space.
+
+instances that haven't been used for a long time get recycled (free up memory)
+
+instance attributes = attributes of objects
+instance method = method invoked by object
+
+Each object's memory is independent to each other.
+Instance maintains its own attributes (aka object state)
+
+to know which object invoked the method (e.i. m()), we put "self" in the parameters (e.i. m(self, )
+instance is passed to instance method as "self", therefore it can access the instance's attributes
+
+
+(11.2.1)
+
+EVERYTHING IS AN OBJECT (in python 3)
+
+class (special object) = class-object
+instance (normal object) = instance-object
+
+
+(11.2.2)
+
+instances can have attributes and methods
+classes can ALSO have attributes and methods
+
+EX:
+class Cat()
+ALL CATS:
+species = "Mammal"
+regulateBodyTemperature()
+
+My cat:
+self.name = ""
+self.age = ""
+
+sleep()
+eat()
+
+
+(11.3)
+
+Class attributes are the same for all instances of a class.
+Instance attributes are different for every instance of a class.
+
+The first is used to record characteristics associated with the class
+The latter is used to record characteristics of a specific instance
+
+
