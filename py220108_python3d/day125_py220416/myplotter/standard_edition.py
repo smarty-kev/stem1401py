@@ -19,39 +19,65 @@ from shape_entities import Shape, TwoDShape, Circle, Rectangle, Square, Triangle
 
 class PerimeterFinder:
     def getPerimeter(self, shape_obj):
-        pass
+        perimeter = shape_obj.findPerimeter()
+        return perimeter
 
     def getMultiplePerimeter(self, *shape_obj):
-        pass
+        perimeters = []
+        for obj in shape_obj:
+            perimeters.append(self.getPerimeter(obj))
+        return perimeters
 
 
 class AreaFinder:
     def getArea(self, shape_obj):
-        pass
+        area = shape_obj.findArea()
+        return area
 
     def getMultipleArea(self, *shape_obj):
-        pass
+        areas = []
+        for obj in shape_obj:
+            areas.append(self.getArea(obj))
+        return areas
 
 
 class VolumeFinder:
     def getVolume(self, shape_obj):
-        pass
+        volume = shape_obj.findVolume()
+        return volume
 
     def getMultipleVolume(self, *shape_obj):
-        pass
+        volumes = []
+        for obj in shape_obj:
+            volumes.append(self.getVolume(obj))
+        return volumes
 
 
 class Drawer:
-    def drawShape(self):
-        pass
+    def startDrawing(self, shape_obj):
+        print("===New Shape===")
+        print(f"Drawing the shape \"{shape_obj.shape_type}\"...")
 
-    def drawShapes(self):
-        pass
+    def finishDrawing(self):
+        print("Finished drawing.")
+        print("\n")
 
 
 class MyPlotter(PerimeterFinder, AreaFinder, VolumeFinder):
     def __init__(self):
         self.drawer = Drawer()
+        print("===MY PLOTTER===\n\n")
 
-    def drawShape(self):
-        pass
+    def plotShape(self, shape_obj):
+        self.drawer.startDrawing(shape_obj)
+        if shape_obj.dimension == "TwoD":
+            perimeter = self.getPerimeter(shape_obj)
+            area = self.getArea(shape_obj)
+            print(f"The perimeter of the {shape_obj.shape_type} is {perimeter}")
+            print(f"The area of the {shape_obj.shape_type} is {area}")
+        elif shape_obj.dimension == "ThreeD":
+            area = self.getArea(shape_obj)
+            volume = self.getVolume(shape_obj)
+            print(f"The area of the {shape_obj.shape_type} is {area}")
+            print(f"The volume of the {shape_obj.shape_type} is {volume}")
+        self.drawer.finishDrawing()

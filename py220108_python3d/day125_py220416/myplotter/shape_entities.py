@@ -21,6 +21,7 @@ class Shape:
 
 class TwoDShape(Shape):
     def __init__(self, shape_type):
+        self.dimension = "TwoD"
         super().__init__(shape_type)
 
     def findPerimeter(self):
@@ -165,6 +166,7 @@ class Rhombus(TwoDShape):
 
 class ThreeDShape(Shape):
     def __init__(self, shape_type=None):
+        self.dimension = "ThreeD"
         super().__init__(shape_type)
 
     def findArea(self):
