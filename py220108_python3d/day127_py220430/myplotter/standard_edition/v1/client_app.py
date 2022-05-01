@@ -7,34 +7,35 @@ from plotter import *
 
 
 # shape name
-two_d_shapes = ["Circle", "Rectangle", "Square", "Triangle"]
-three_d_shapes = ["Cube", "Sphere"]
+two_d_shapes = ["Circle", "Rectangle", "Square", "Triangle", "Right Triangle", "Oval", "Parallelogram", "Rhombus"]
+three_d_shapes = ["Cube", "Sphere", "Cylinder", "Pyramid"]
 
 
 # main menu:
 main_menu = "Main Menu\n" \
             "Plot Shape : [1]\n" \
+            "Color Shape: [2]\n" \
             "Exit       : [exit]\n"
 
 
 # plot shape menu
 plot_shape_menu = "Shape Menu\n"
-
-
 plot_shape_menu += "2D Shapes:\n"
 key = 1
 for shape in two_d_shapes:
-    plot_shape_menu += shape
-    plot_shape_menu += f" : [{key}]\n"
+    plot_shape_menu += "{:<14} : ".format(shape)  # 14 is longest length of a shape name (Right Triangle)
+    plot_shape_menu += f"[{key}]\n"
     key += 1
-
 plot_shape_menu += "3D Shapes:\n"
 for shape in three_d_shapes:
-    plot_shape_menu += shape
-    plot_shape_menu += f" : [{key}]\n"
+    plot_shape_menu += "{:<14} : ".format(shape)
+    plot_shape_menu += f"[{key}]\n"
     key += 1
-
 plot_shape_menu += "Return to main menu : [exit]"
+
+
+# color menu
+color_main_menu = None
 
 
 def main():
@@ -98,6 +99,8 @@ def main():
 
                 if shape_menu_input == "exit":
                     break
+        if main_menu_input == "2":
+            pass
 
 
 # main program
