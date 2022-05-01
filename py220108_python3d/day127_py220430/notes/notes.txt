@@ -1,3 +1,10 @@
 TWO ZIP FILES cuz two products
 
 once again, plan is important
+
+
+instance attributes
+instance methods
+
+class attributes (last class)
+class methods
