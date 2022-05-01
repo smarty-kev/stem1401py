@@ -81,10 +81,15 @@ class RightTriangle(TwoDShape):
     def __init__(self, a, b, hypotenuse=None,  shape_type="Right Triangle"):
         self.a = float(a)
         self.b = float(b)
-        self.hypotenuse = float(hypotenuse)
+        if hypotenuse != None:
+            self.hypotenuse = float(hypotenuse)
+        else:
+            self.hypotenuse = None
         super().__init__(shape_type)
 
     def findPerimeter(self):
+        if self.hypotenuse is None:
+            self.hypotenuse = self.findHypotenuse()
         perimeter = self.a + self.b + self.hypotenuse
         return perimeter
 

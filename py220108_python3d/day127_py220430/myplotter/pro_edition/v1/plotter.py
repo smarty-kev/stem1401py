@@ -65,8 +65,11 @@ class Drawer:
 
 
 class Colorer:
-    def fillColor(self):
-        pass
+    def fillColor(self, shape_obj, color):
+        print("\n===Coloring===")
+        print(f"Coloring \"{shape_obj.shape_type}\" with the color \"{color}\".")
+        shape_obj.color = color
+        print(f"\"{shape_obj.shape_type}\" is now \"{color}\".\n")
 
 
 class MyPlotter(PerimeterFinder, AreaFinder, VolumeFinder):
@@ -85,14 +88,14 @@ class MyPlotter(PerimeterFinder, AreaFinder, VolumeFinder):
         if shape_obj.dimension == "TwoD":
             perimeter = self.getPerimeter(shape_obj)
             area = self.getArea(shape_obj)
-            print(f"The perimeter of the {shape_obj.shape_type} is {perimeter}")
-            print(f"The area of the {shape_obj.shape_type} is {area}")
+            print(f"The perimeter of the {shape_obj.shape_type} is {perimeter}.")
+            print(f"The area of the {shape_obj.shape_type} is {area}.")
         elif shape_obj.dimension == "ThreeD":
             area = self.getArea(shape_obj)
             volume = self.getVolume(shape_obj)
-            print(f"The area of the {shape_obj.shape_type} is {area}")
-            print(f"The volume of the {shape_obj.shape_type} is {volume}")
+            print(f"The area of the {shape_obj.shape_type} is {area}.")
+            print(f"The volume of the {shape_obj.shape_type} is {volume}.")
         self.drawer.finishDrawing()
 
-    def fillColor(self):
-        pass
+    def fillColor(self, shape_obj, color):
+        self.colorer.fillColor(shape_obj, color)
