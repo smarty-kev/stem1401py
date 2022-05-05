@@ -76,14 +76,16 @@ class MyPlotter(PerimeterFinder, AreaFinder, VolumeFinder):
     def __init__(self):
         self.drawer = Drawer()
         self.colorer = Colorer()
+        self.myshapes = []
         print("===MY PLOTTER===")
         print("Professional Version")
         print("IMPORTANT!!!")
         print("PI (π) will be used with 14 digits after the comma.")
         print("Square roots will not be taken as absolute value.")
-        print("\n\n")
+        print("\n")
 
     def plotShape(self, shape_obj):
+        self.myshapes.append(shape_obj)
         self.drawer.startDrawing(shape_obj)
         if shape_obj.dimension == "TwoD":
             perimeter = self.getPerimeter(shape_obj)
