@@ -1,0 +1,29 @@
+today topic : continue finish class members
+
+@classmethod and @staticmethod
+
+
+class method
+
+[syntax]
+@classmethod
+def method(cls):
+    pass
+
+we can access it without passing the parameter
+we can access other cls methods or cls attributes
+
+
+static method
+A method that doesn't access instance attributes and instance methods nor access class attributes or class methods
+
+[syntax]
+@staticmethod
+def myMethod():
+    pass
+
+
+
+HW:
+test case
+user guide
