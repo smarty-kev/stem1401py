@@ -1,0 +1,28 @@
+Version 1
+Last Updated : 11 Mai 2022
+Author : Kevin Liu
+
+This is a guide for The Plotter application
+
+How to start program :
+1. - Open Folder location on PC
+2. - Run "client_app.py" in IDE or using the "python client_app.py in Terminal"
+
+How to use program :
+
+When run, you will be greeted with a main menu
+If you wish to plot a shape, input "1"
+Otherwise, input "exit" to exit the program
+
+After inputting "1", you will enter a sub-menu to plot shapes.
+2D Shapes available : Circle, Rectangle, Square, Triangle
+3D Shapes available : Cube, Sphere
+Press the number corresponding to the desired shape to plot.
+After that, you will have to input the parameters for said shape
+(i.e. : A square requires only one parameter, "a", whilst a rectangle requires two, "a" and "b")
+The program will plot the shape, print out the perimeter and area (2D) or the area and volume (3D)
+
+You will be sent back to the sub-menu, where you could perform more shape plotting.
+You may exit the program by entering "exit" twice or by simply stopping the program by brute force (through IDE or Terminal) - not recommended
+
+Enjoy and have fun!

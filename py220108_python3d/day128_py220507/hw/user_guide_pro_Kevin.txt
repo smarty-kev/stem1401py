@@ -1,0 +1,59 @@
+Version 1
+Last Updated : 11 Mai 2022
+Author : Kevin Liu
+
+This is a guide for The Plotter application
+
+How to start program :
+1. - Open Folder location on PC
+2. - Run "client_app.py" in IDE or using the "python client_app.py in Terminal"
+
+How to use program :
+
+When run, you will be greeted with a main menu
+If you wish to plot a shape, input "1"
+If you wish to color a shape that you plotted, input "2", only if you have already plotted a shape
+Otherwise, input "x" to exit the program
+
+
+==================
+
+
+After inputting "1", you will enter a sub-menu to plot shapes.
+2D Shapes available : Circle, Rectangle, Square, Triangle, Right Triangle, Oval, Parallelogram, Rhombus
+3D Shapes available : Cube, Sphere, Cylinder, Pyramid
+Press the number corresponding to the desired shape to plot.
+After that, you will have to input the parameters for said shape
+(i.e. : A square requires only one parameter, "a", whilst a rectangle requires two, "a" and "b")
+The program will plot the shape, print out the perimeter and area (2D) or the area and volume (3D)
+
+You will be sent back to the sub-menu, where you could perform more shape plotting.
+If you wish to return to the main menu, enter "x".
+You may exit the program by entering "x" twice or by simply stopping the program by brute force (through IDE or Terminal) - not recommended
+
+
+==================
+
+
+After inputting "2", you will enter a sub-menu to choose which shape to color
+A list of all plotted shapes will appear.
+Enter the number corresponding to the desired shape to color.
+
+After, you will enter another sub-menu to choose the coloring format
+Enter "1" for default colors
+Enter "2" for hex colors
+If you wish to cancel and return to main menu, enter "x"
+
+If you chose 1, you will be greeted with 8 colors to chose from (i.e. : "1" for red, "2" for green...)
+If you chose 2, you will be able to enter your own custom hex value color
+The program will color the desired shape with the selected color
+
+You will then be sent back to the Coloring Menu, where you can color more shapes.
+You can return to the main menu to plot shapes by entering "x"
+
+
+==================
+
+
+
+Enjoy and have fun!
