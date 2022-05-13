@@ -5,4 +5,11 @@ Program from : Guang Zhu
 
 My first issue : Everything is too crammed, would be better to have added spacing/padding between lines
 
+From the little testing that I have done, the values (perimeter, area, volume) seem to be accurate
+The coloring function seems to not be complete, not many coloring options, and I am not sure not which shape I have colored
+
+The UI is simple to understand and easy to use. Program is responsive and quick. Well done!
+
+My decision:
+Accept
 
