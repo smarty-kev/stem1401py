@@ -1,1 +1,17 @@
-14 Mai 2022k
+14 Mai 2022
+
+
+Certificate requirements for Python III
+
+1. Plotter is complete
+System structure, ease of use, clean code, good UI/UX are concerned.
+
+2. Related documents are completely written
+Software engineering behaviours and quality are most concerned.
+
+3. Score requirements in final Exam
+Above 75% in Part I
+Above 80% in Part II
+
+4. Submit before due date
+2022-05-27

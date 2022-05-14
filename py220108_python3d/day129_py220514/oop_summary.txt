@@ -1,0 +1,37 @@
+Paradigm - A method (an approach) to solve a problem
+Examples of paradigms in programming : OOP, Procedural Prog., Concurrent Prog.
+
+After python 3, EVERYTHING in python is an object
+
+
+
+How to define a class:
+
+class Dog:
+    # class attributes
+    c_v1 = 0
+
+    def __init__(self, v1, v2):
+        # instance attributes
+        self.v1 = v1
+        self.v2 = v2
+
+    @staticmethod
+    def static_method():
+        pass
+
+    @classmethod
+    def class_method(cls):
+        pass
+
+    def instance_methods(self):
+        pass
+
+
+
+attritube - color
+state     - color = "orange"
+
+
+class  - attribute, state, behaviour
+object - identity, state, behaviour
