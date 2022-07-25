@@ -1,0 +1,293 @@
+Questions:
+1. Programming Paradigm (3')
+1.1 What is the programming paradigm?
+
+
+A programming paradigm is a method/approach to solve a problem.
+
+
+1.2 What programming paradigms does Python support?
+
+
+Paradigms python supports : imperative, functional, procedural and object-oriented
+
+
+1.3 How many programming paradigms do you know? List them as many as you can.
+
+
+Imperative Programming
+Functional Programming
+Procedural Programming
+Object-Oriented Programming
+Concurrent Programming
+
+
+2. Procedure-oriented Programming (2')
+2.1 Briefly explain what procedure-oriented programming is.
+
+
+Procedural Programming consists of computational steps (instructions) that the computer follows.
+It is a derivative of imperative programming
+
+
+2.2 What pros and cons are there for this paradigm? List 1 or 2 points for each
+
+Pros:
+Intuitive (to solve a problem, you use ordered steps)
+Better for simple problems
+
+# General Use
+
+Cons:
+No reusability
+No abstraction
+
+# Harder to write, difficult to relate with real-world objects
+
+
+3. Object-oriented Programming (8')
+3.1 Briefly explain what object-oriented programming is.
+
+
+OOP is a paradigm centered around the use of objects (attributes/properties & methods), as the name implies.
+
+# Built on the concepts of logical objects
+
+
+3.2 What are the main features of OOP? List them only.
+
+
+Data Abstraction
+Encapsulation
+Inheritance
+Polymorphism
+
+# good answer
+
+
+3.3 Why is OOP widely applied and so popular in real developing work? List 2 or 3 points. (2')
+
+
+OOP systems can easily be upgraded/changed at a larger scale (Encapsulation, Inheritance, Polymorphism)
+Maintenance and updates are therefore easier, the reason why it is so popular
+
+
+# polymorphism -> overloading / overriding
+
+
+3.4 What is information hiding?
+
+
+It consists of hiding certain method or attributes from others (other objects or the client)
+
+
+3.5 Why is information hiding necessary?
+
+
+It is important because the user should not be able to access everything, since some information is confidential
+It can also be useful to divide software, for example the standard edition hiding some features that only the pro edition is supposed to have
+
+
+3.6 What is abstraction?
+
+
+Abstraction is the picking of essential/useful characteristics from real world objects/ideas
+
+
+3.7 Briefly describe the process of modeling the real world (or things).
+
+
+Identify attributes of target (i.e. : a person has a name, age, address, etc.)
+Find methods of target (i.e : a person eats, sleeps, etc.)
+Find inheritance (i.e. : a child is an offspring of a parent, who himself is a offspring of a grand-parent)
+
+#  find objects, then attributes, then methods
+
+4. Class and Object (2')
+4.1 When we talk about class and object together, what do class and object refer to?
+
+
+They refer to the data type consisting of both attributes and methods.
+
+
+4.2 What are the three characteristics of objects?
+
+
+The three characteristics of objects are :
+- identity  (every instance is unique)
+- state     (instance attributes i.e. : color = "orange")
+- behaviour (instance methods    i.e. : eat())
+
+
+5. Defining Classes (2')
+5.1 What members does a class definition usually contain?
+
+
+A class usually contains a __init__() function, where instance attributes are defined.
+It also usually contains methods (static, class or instance)
+
+
+5.2 How to create objects of a class? (Describe or give an example)
+
+
+class Foo:
+    pass
+
+f1 = Foo()
+
+
+
+6. Objects and Instances (4')
+6.1 How to distinguish between two objects?
+
+
+We can use the id() function to differentiate between two objects.
+
+
+6.2 How to list all members of an object?
+
+
+We can use the dir() function to list all members of an object.
+
+
+6.3 How do you understand the 'self' of python objects? (Write in one sentence)
+
+
+It is a reference to the instance that uses the called method. This allows it to access its own attributes and methods through this reference.
+
+
+6.4 How to get information about a python object including all states?
+
+
+We use the __str__() or the __repr__() function to get information about a python object
+
+
+7. Lifecycle of Objects (2')
+7.1 What is the lifecycle of python objects? (List keywords of each stage)
+
+
+- Initialization
+- Allocate Memory
+- Access methods and attributes
+- Delete/Destruction or aka Recycling
+
+
+7.2 Briefly describe the __init__() method.
+
+
+It is a method that is run by default after the creation of an instance.
+It is usually used to define attributes of the newly created instance.
+
+
+8.  Encapsulation in OO (5')
+8.1 How do you understand encapsulation? (What, Why) (2')
+
+
+Encapsulation is the compacting (encapsulation) of methods and attributes (variables) into one unit.
+It is used to protect accidental damage. A private attribute can only be changed by the instance's method.
+
+
+8.2 What are the differences between private members and public members?
+
+
+A private members is not visible and accessible outside the class or its sub-classes,
+whilst public members are visible and accessible outside
+
+
+8.3 Why do we need private attributes?
+
+
+To ensure that the data is safe and not easily changeable (hackable)
+
+
+8.4 Why do we need private methods in some cases?
+
+
+We sometimes need private methods because some methods should not be easily called and used by the client.
+
+
+9. Inheritance in OO (7')
+9.1 How do you understand inheritance? (What, Why)  (2')
+
+
+Inheritance is the derivation of a class from another (or multiple others) which shares attributes and methods.
+It allows programmers to more easily expand on existing code.
+
+
+9.2 List all types of Inheritance in Python
+
+
+Single, Multilevel, Multiple, Hierarchical, Hybrid
+
+
+9.3 How to access members of parent classes?
+
+
+def Foo1:
+    v1 = 1
+
+def Foo2(Foo1):
+    pass
+
+
+foo2 = Foo2()
+print(foo2.v1)
+
+
+9.4 What is method resolution order (MRO)?
+
+
+MRO is an order in which a method is searched through in a class hierarchy. It is especially useful in multiple inheritance.
+
+
+9.5 What problem does MRO solve?
+
+
+MRO solves the problem where multiple __init__() are called at the same time.
+
+
+9.6 How to call the __init__() method of the parent class from a subclass?
+
+
+To call the __init__() method of a parent class from a subclass, we can use the
+super().__init__() function.
+
+
+10. Polymorphism in OO (2')
+10.1 How do you understand polymorphism? (What, Why)
+
+
+Polymorphism is the situation where a concept occurs in multiple different forms.
+In greek, poly = "many", morph = "change of form".
+It is a pattern where classes have different functionality but a common interface.
+
+
+11. Class members (3')
+11.1 List all types of class members of a class in python.
+
+
+Class attributes, class methods
+Instance attributes, instance methods
+Static methods
+
+
+11.2 What is the difference between instance methods and class methods?
+
+
+instance methods are methods that the instance performs (and where instance attributes/methods are used/accessed)
+in an instance method, both attributes/methods of the instance and of the class can be accessed
+
+class methods are methods that have to do with the class (where class attributes/methods are used/accessed)
+in a class method, instances of the class cannot be accessed
+
+
+11.3 What is the difference between static methods and class methods?
+
+
+static methods don't have a default argument (self or cls)
+therefore, it cannot access any class OR instance attributes/methds
+we use @staticmethod decorator to define a static method
+
+class methods use cls as a reference (i.e. : def foo1(cls):)
+with the cls reference, it can access attributes and methods of the reference (the class it belongs to)
+

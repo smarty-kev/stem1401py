@@ -1,0 +1,5 @@
+For interview example :
+Briefly explain what procedure-oriented programming is.
+First explain what it is.
+Then explain the use, pros, cons
+

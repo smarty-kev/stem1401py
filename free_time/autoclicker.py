@@ -13,4 +13,4 @@ def spam_left():
 while True:
     a.press(pynput.mouse.Button.left)
     a.release(pynput.mouse.Button.left)
-    time.sleep(0.00000001)
+    time.sleep(3)
