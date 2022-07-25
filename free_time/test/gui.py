@@ -2,6 +2,7 @@
 
 """
 from tkinter import *
+import password_manager, password_generator
 
 
 def open_password_generator_window():

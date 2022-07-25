@@ -1,4 +1,4 @@
-import gui, cli, password_manager, password_generator
+import gui, cli
 
 
 def main_window():
@@ -7,4 +7,5 @@ def main_window():
 
 if __name__ == "__main__":
     main_window()
+    print()
 
